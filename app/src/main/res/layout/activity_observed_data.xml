@@ -9,23 +9,32 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cn.libery.refactoringsample.ObservedDataActivity">
+    tools:context="cn.libery.refactoringsample.DuplicateObservedData.ObservedDataActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="复制“被监视数据”\n将该数据复制一个到领域对象中，建立一个Observer模式，用以同步领域对象和GUI对象内的重复数据" />
 
     <EditText
         android:id="@+id/start"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="start" />
+        android:hint="start"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/end"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="end" />
+        android:hint="end"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/length"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:hint="length" />
+        android:hint="length"
+        android:inputType="number" />
 </LinearLayout>

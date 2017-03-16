@@ -1,4 +1,4 @@
-package cn.libery.refactoringsample;
+package cn.libery.refactoringsample.DuplicateObservedData;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import java.util.Observable;
 import java.util.Observer;
+
+import cn.libery.refactoringsample.R;
 
 public class ObservedDataActivity extends AppCompatActivity implements Observer {
 
@@ -28,11 +30,46 @@ public class ObservedDataActivity extends AppCompatActivity implements Observer 
         data = new Interval();
         data.addObserver(this);
         update(data, null);
+        startEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                setStart(startEdit.getText().toString());
+                data.calculateLength();
+
+            }
+        });
+        endEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                setEnd(endEdit.getText().toString());
+                data.calculateLength();
+
+            }
+        });
+
     }
 
     @Override
     public void update(Observable o, Object arg) {
-        data.calculateLength();
+        lengthEdit.setText(getLength());
     }
 
     public String getStart() {

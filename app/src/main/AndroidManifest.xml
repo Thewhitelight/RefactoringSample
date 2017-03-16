@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ObservedDataActivity"></activity>
+        <activity android:name=".DuplicateObservedData.ObservedDataActivity"></activity>
     </application>
 
 </manifest>

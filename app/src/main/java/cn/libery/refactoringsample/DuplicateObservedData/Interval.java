@@ -1,4 +1,4 @@
-package cn.libery.refactoringsample;
+package cn.libery.refactoringsample.DuplicateObservedData;
 
 import java.util.Observable;
 
@@ -10,7 +10,6 @@ public class Interval extends Observable {
 
     private String start = "0";
     private String end = "0";
-
     private String length = "0";
 
     public String getLength() {
@@ -45,12 +44,11 @@ public class Interval extends Observable {
 
     public void calculateLength() {
         try {
-            int start = Integer.valueOf(getStart());
-            int end = Integer.valueOf(getEnd());
-            int length = end - start;
+            int length = Integer.valueOf(getEnd()) - Integer.valueOf(getStart());
             setLength(String.valueOf(length));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }
