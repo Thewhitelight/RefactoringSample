@@ -42,13 +42,9 @@ public class Interval extends Observable {
         notifyObservers();
     }
 
-    public void calculateLength() {
-        try {
-            int length = Integer.valueOf(getEnd()) - Integer.valueOf(getStart());
-            setLength(String.valueOf(length));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void calculateLength() throws Exception {
+        int length = Integer.valueOf(getEnd()) - Integer.valueOf(getStart());
+        setLength(String.valueOf(length));
     }
 
 }

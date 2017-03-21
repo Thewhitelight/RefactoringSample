@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -43,7 +44,7 @@ public class ObservedDataActivity extends AppCompatActivity implements Observer 
             @Override
             public void afterTextChanged(Editable s) {
                 setStart(startEdit.getText().toString());
-                data.calculateLength();
+                calculateLength();
 
             }
         });
@@ -60,8 +61,7 @@ public class ObservedDataActivity extends AppCompatActivity implements Observer 
             @Override
             public void afterTextChanged(Editable s) {
                 setEnd(endEdit.getText().toString());
-                data.calculateLength();
-
+                calculateLength();
             }
         });
 
@@ -97,6 +97,14 @@ public class ObservedDataActivity extends AppCompatActivity implements Observer 
     public void setLength(String arg) {
         arg = TextUtils.isEmpty(arg) ? "0" : arg;
         data.setLength(arg);
+    }
+
+    public void calculateLength() {
+        try {
+            data.calculateLength();
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
