@@ -18,15 +18,6 @@ public class Employee {
     }
 
     public int payAmount() {
-        switch (getEmployeeTypeCode()) {
-            case EmployeeType.ENGINEER:
-                return 80;
-            case EmployeeType.SALESMAN:
-                return 90;
-            case EmployeeType.MANAGER:
-                return 99;
-            default:
-                throw new IllegalArgumentException("Incorrect Employee");
-        }
+       return employeeType.payAmount(this);
     }
 }

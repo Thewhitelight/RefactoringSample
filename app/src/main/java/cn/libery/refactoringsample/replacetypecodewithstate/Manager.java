@@ -6,6 +6,11 @@ package cn.libery.refactoringsample.replacetypecodewithstate;
 
 public class Manager extends EmployeeType {
     @Override
+    int payAmount(Employee e) {
+        return 99;
+    }
+
+    @Override
     int getTypeCode() {
         return EmployeeType.MANAGER;
     }
