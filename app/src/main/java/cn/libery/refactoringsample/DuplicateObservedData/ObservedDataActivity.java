@@ -1,4 +1,4 @@
-package cn.libery.refactoringsample.DuplicateObservedData;
+package cn.libery.refactoringsample.duplicateobserveddata;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

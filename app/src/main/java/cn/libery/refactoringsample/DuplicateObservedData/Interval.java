@@ -1,4 +1,4 @@
-package cn.libery.refactoringsample.DuplicateObservedData;
+package cn.libery.refactoringsample.duplicateobserveddata;
 
 import java.util.Observable;
 

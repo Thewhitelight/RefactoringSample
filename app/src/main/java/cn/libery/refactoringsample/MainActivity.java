@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import cn.libery.refactoringsample.DuplicateObservedData.ObservedDataActivity;
+import cn.libery.refactoringsample.duplicateobserveddata.ObservedDataActivity;
 
 public class MainActivity extends AppCompatActivity {
 
